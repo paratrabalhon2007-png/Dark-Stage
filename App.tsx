@@ -5,10 +5,20 @@ import { ICONS } from './constants';
 import { MODULES } from './data';
 import { Module, Student } from './types';
 
-// Padrão do Vite para ler variáveis da Vercel
-const supabaseUrl = (import.meta as any).env?.VITE_SUPABASE_URL || (process.env as any).VITE_SUPABASE_URL || '';
-const supabaseAnonKey = (import.meta as any).env?.VITE_SUPABASE_ANON_KEY || (process.env as any).VITE_SUPABASE_ANON_KEY || '';
+// Função segura para ler variáveis tanto na Vercel quanto no Preview
+const getEnv = (name: string): string => {
+  try {
+    // @ts-ignore
+    return import.meta.env?.[name] || '';
+  } catch (e) {
+    return '';
+  }
+};
 
+const supabaseUrl = getEnv('VITE_SUPABASE_URL');
+const supabaseAnonKey = getEnv('VITE_SUPABASE_ANON_KEY');
+
+// Inicialização protegida: Só cria o cliente se as chaves existirem
 const supabase = (supabaseUrl && supabaseAnonKey) 
   ? createClient(supabaseUrl, supabaseAnonKey)
   : null;
@@ -67,8 +77,9 @@ const App: React.FC = () => {
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
     if (!supabase) {
-      alert("⚠️ ERRO: Chaves de conexão não encontradas. Verifique as variáveis de ambiente.");
+      alert("⚠️ ERRO DE CONEXÃO:\nAs chaves do banco de dados não foram encontradas.\n\nSe você estiver na Vercel, certifique-se de ter feito o REDEPLOY após salvar as variáveis de ambiente.");
       return;
     }
 
@@ -76,19 +87,23 @@ const App: React.FC = () => {
     const email = (formData.get('email') as string).toLowerCase().trim();
     const password = formData.get('password') as string;
     
-    const { data, error } = await supabase
-      .from('students')
-      .select('*')
-      .eq('email', email)
-      .eq('password', password)
-      .single();
-    
-    if (data) {
-      setIsLoggedIn(true);
-      setCurrentUser(email);
-      localStorage.setItem('dark_stage_session', email);
-    } else {
-      alert("E-mail ou senha incorretos.");
+    try {
+      const { data, error } = await supabase
+        .from('students')
+        .select('*')
+        .eq('email', email)
+        .eq('password', password)
+        .single();
+      
+      if (data) {
+        setIsLoggedIn(true);
+        setCurrentUser(email);
+        localStorage.setItem('dark_stage_session', email);
+      } else {
+        alert("Acesso negado: Verifique seu e-mail e senha.");
+      }
+    } catch (err) {
+      alert("Erro na autenticação. Verifique sua conexão.");
     }
   };
 
@@ -115,7 +130,7 @@ const App: React.FC = () => {
       await fetchStudents();
       setNewStudent({ name: '', email: '', password: '' });
       setIsAddingStudent(false);
-      alert("Aluno adicionado com sucesso!");
+      alert("Aluno adicionado!");
     } else {
       alert("Erro ao salvar: " + error.message);
     }
@@ -150,7 +165,7 @@ const App: React.FC = () => {
           <div className="text-center mb-10">
             <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-black font-black text-lg mx-auto mb-4">DS</div>
             <h1 className="text-xl font-black uppercase italic tracking-tighter">Dark Stage™</h1>
-            <p className="text-[#ff5a00] text-[8px] font-black uppercase tracking-widest mt-1">Acesso restrito a alunos</p>
+            <p className="text-[#ff5a00] text-[8px] font-black uppercase tracking-widest mt-1">Acesso exclusivo</p>
           </div>
           <div className="bg-[#111] p-8 rounded-2xl border border-white/5 shadow-2xl">
             <div className="mb-6 text-center">
@@ -170,7 +185,7 @@ const App: React.FC = () => {
                   </button>
                 </div>
               </div>
-              <button type="submit" className="w-full bg-[#ff5a00] hover:bg-[#ff7a00] font-black py-4 rounded-xl uppercase tracking-widest text-[9px] transition-all">Entrar na plataforma</button>
+              <button type="submit" className="w-full bg-[#ff5a00] hover:bg-[#ff7a00] font-black py-4 rounded-xl uppercase tracking-widest text-[9px] transition-all">Entrar na Plataforma</button>
               <div className="pt-4 text-center">
                 <button type="button" className="text-[8px] font-black uppercase text-gray-600 hover:text-white transition-colors">Esqueceu sua senha? Clique aqui</button>
               </div>
@@ -185,7 +200,7 @@ const App: React.FC = () => {
   const renderAdmin = () => (
     <div className="max-w-4xl mx-auto px-4 py-8 animate-fadeIn">
       <div className="flex items-center justify-between mb-10">
-        <h1 className="text-xl font-black uppercase italic tracking-widest">Alunos Ativos</h1>
+        <h1 className="text-xl font-black uppercase italic tracking-widest">Gestão de Alunos</h1>
         <button onClick={() => setIsAddingStudent(true)} className="bg-white text-black px-4 py-2 rounded-lg text-[9px] font-black uppercase tracking-widest flex items-center gap-2 hover:bg-gray-200 transition-all"><ICONS.Plus className="w-3 h-3" /> Adicionar Aluno</button>
       </div>
       <div className="bg-[#111] rounded-2xl border border-white/5 overflow-hidden shadow-2xl">
@@ -242,7 +257,7 @@ const App: React.FC = () => {
         <img src="https://picsum.photos/seed/dark/1200/600?grayscale" className="w-full opacity-30 h-48 object-cover" />
         <div className="absolute inset-0 flex flex-col justify-end p-6">
           <h1 className="text-4xl font-black italic uppercase tracking-tighter">DARK STAGE™</h1>
-          <p className="text-[#ff5a00] text-[8px] font-black uppercase tracking-[0.4em] mt-1">Área VIP</p>
+          <p className="text-[#ff5a00] text-[8px] font-black uppercase tracking-[0.4em] mt-1">Treinamento</p>
         </div>
       </div>
       <div className="space-y-2">
@@ -269,7 +284,7 @@ const App: React.FC = () => {
   const renderModule = (m: Module) => (
     <div className="max-w-2xl mx-auto px-4 py-8 animate-fadeIn">
       <button onClick={() => setSelectedModule(null)} className="text-gray-600 hover:text-white mb-8 text-[8px] font-black uppercase flex items-center gap-2 transition-colors">
-        <ICONS.ArrowLeft className="w-3 h-3" /> Voltar ao início
+        <ICONS.ArrowLeft className="w-3 h-3" /> Voltar
       </button>
       <div className="mb-10">
         <h1 className="text-3xl font-black italic uppercase tracking-tighter mb-2">{m.title}</h1>
@@ -296,12 +311,12 @@ const App: React.FC = () => {
       <nav className="sticky top-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-xl border-b border-white/5 px-6 py-4 flex items-center justify-between">
         <div onClick={() => { setSelectedModule(null); setIsAdminMode(false); }} className="flex items-center gap-2 cursor-pointer">
           <div className="w-6 h-6 bg-white rounded flex items-center justify-center text-black font-black text-[9px]">DS</div>
-          <span className="font-black text-[9px] uppercase tracking-[0.2em] hidden md:block">Dark Stage</span>
+          <span className="font-black text-[9px] uppercase tracking-[0.2em]">Dark Stage</span>
         </div>
         <div className="flex items-center gap-4">
           {currentUser === 'admin@darkstage.com' && (
             <button onClick={() => setIsAdminMode(!isAdminMode)} className={`text-[8px] font-black uppercase transition-all ${isAdminMode ? 'text-[#ff5a00]' : 'text-gray-500 hover:text-white'}`}>
-              {isAdminMode ? 'Sair do Admin' : 'Gestão Alunos'}
+              {isAdminMode ? 'Sair do Painel' : 'Gestão'}
             </button>
           )}
           <button onClick={handleLogout} className="text-[8px] font-black uppercase text-red-900 hover:text-red-500 transition-colors">Sair</button>
