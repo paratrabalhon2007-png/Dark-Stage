@@ -9,11 +9,13 @@ const App: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [currentUser, setCurrentUser] = useState<string | null>(null);
   const [isAdminMode, setIsAdminMode] = useState<boolean>(false);
+  const [showLoginPassword, setShowLoginPassword] = useState<boolean>(false);
   
   // Student Management State
   const [students, setStudents] = useState<Student[]>([]);
   const [isAddingStudent, setIsAddingStudent] = useState<boolean>(false);
   const [newStudent, setNewStudent] = useState({ name: '', email: '', password: '' });
+  const [showNewStudentPassword, setShowNewStudentPassword] = useState<boolean>(false);
 
   // App Navigation State
   const [selectedModule, setSelectedModule] = useState<Module | null>(null);
@@ -27,7 +29,7 @@ const App: React.FC = () => {
     if (savedStudents) {
       setStudents(JSON.parse(savedStudents));
     } else {
-      // Default Admin - SETTING DEFAULT PASSWORD HERE
+      // Default Admin
       const initialAdmin: Student[] = [{ 
         id: '1', 
         name: 'Admin Principal', 
@@ -60,7 +62,7 @@ const App: React.FC = () => {
     const email = formData.get('email') as string;
     const password = formData.get('password') as string;
     
-    // Validate email and password in our mock "Database"
+    // Validate email and password
     const allowed = students.find(s => 
       s.email.toLowerCase() === email.toLowerCase() && 
       s.password === password
@@ -128,7 +130,7 @@ const App: React.FC = () => {
     }
   };
 
-  // Handle in-app navigation (data attributes)
+  // Handle in-app navigation
   useEffect(() => {
     const handleInAppNavigation = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -178,7 +180,6 @@ const App: React.FC = () => {
 
   const renderLogin = () => (
     <div className="min-h-screen flex items-center justify-center px-4 bg-[#050505] relative overflow-hidden">
-      {/* Background patterns */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
         <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-600 rounded-full blur-[120px]" />
         <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-orange-600 rounded-full blur-[120px]" />
@@ -208,13 +209,22 @@ const App: React.FC = () => {
             
             <div>
               <label className="block text-xs font-black text-gray-400 uppercase tracking-widest mb-2">Senha</label>
-              <input 
-                name="password"
-                type="password" 
-                required
-                placeholder="••••••••"
-                className="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-colors"
-              />
+              <div className="relative">
+                <input 
+                  name="password"
+                  type={showLoginPassword ? "text" : "password"}
+                  required
+                  placeholder="••••••••"
+                  className="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-colors pr-12"
+                />
+                <button 
+                  type="button"
+                  onClick={() => setShowLoginPassword(!showLoginPassword)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 hover:text-white transition-colors"
+                >
+                  {showLoginPassword ? <ICONS.EyeOff className="w-5 h-5" /> : <ICONS.Eye className="w-5 h-5" />}
+                </button>
+              </div>
             </div>
 
             <button 
@@ -323,25 +333,34 @@ const App: React.FC = () => {
               </div>
               <div>
                 <label className="block text-xs font-black text-gray-400 uppercase tracking-widest mb-2">Senha do Aluno</label>
-                <div className="flex gap-2">
+                <div className="flex gap-2 relative">
                   <input 
-                    type="text" 
+                    type={showNewStudentPassword ? "text" : "password"} 
                     value={newStudent.password}
                     onChange={(e) => setNewStudent({...newStudent, password: e.target.value})}
                     placeholder="Defina uma senha"
-                    className="flex-1 bg-black border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500"
+                    className="flex-1 bg-black border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 pr-24"
                   />
-                  <button 
-                    onClick={generateRandomPassword}
-                    className="px-4 bg-white/5 border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-white/10 transition-all"
-                  >
-                    Gerar
-                  </button>
+                  <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-2">
+                    <button 
+                      type="button"
+                      onClick={() => setShowNewStudentPassword(!showNewStudentPassword)}
+                      className="p-1 text-gray-600 hover:text-white transition-colors"
+                    >
+                      {showNewStudentPassword ? <ICONS.EyeOff className="w-5 h-5" /> : <ICONS.Eye className="w-5 h-5" />}
+                    </button>
+                    <button 
+                      onClick={generateRandomPassword}
+                      className="px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-[8px] font-black uppercase tracking-widest hover:bg-white/10 transition-all"
+                    >
+                      Gerar
+                    </button>
+                  </div>
                 </div>
               </div>
 
               <div className="p-4 bg-blue-500/5 rounded-xl border border-blue-500/20 text-xs text-blue-400 font-medium leading-relaxed">
-                <span className="font-black text-white">COMO ENTREGAR:</span> Copie o e-mail e a senha gerada e envie para o aluno. Ele usará esses dados para logar.
+                <span className="font-black text-white italic">AVISO IMPORTANTE:</span> A lista de alunos é salva localmente. Para o aluno logar do celular dele, você precisa conectar um banco de dados (Supabase).
               </div>
 
               <div className="pt-10 flex gap-3">
@@ -367,7 +386,6 @@ const App: React.FC = () => {
 
   const renderHome = () => (
     <div className="max-w-2xl mx-auto px-4 py-8 animate-fadeIn">
-      {/* Banner */}
       <div className="relative rounded-xl overflow-hidden mb-8 shadow-2xl border border-white/5">
         <img 
           src="https://picsum.photos/seed/darkstage/1200/500?grayscale" 
@@ -383,18 +401,10 @@ const App: React.FC = () => {
       </div>
 
       <div className="space-y-6">
-        {/* Profile Info */}
         <div className="flex items-start gap-3 mb-4">
           <div className="text-sm text-gray-400">
             <span>por </span>
-            <a 
-              href={SOCIAL_LINKS.instagram} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-white font-bold hover:underline cursor-pointer"
-            >
-              @omentordigitalll
-            </a>
+            <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="text-white font-bold hover:underline cursor-pointer">@omentordigitalll</a>
             <span className="mx-1">|</span>
             <span className="text-gray-500">Mentoria Dark Stage</span>
           </div>
@@ -404,30 +414,17 @@ const App: React.FC = () => {
           <strong className="text-white">Treinamento</strong> de especialização em posicionamento de <strong>perfis Dark iniciantes</strong>, auxiliando na <strong className="text-white">estruturação</strong> e no <strong className="text-white">impulsionamento de vendas</strong>.
         </p>
 
-        {/* Ferramentas Section */}
         <div className="mt-8">
-          <h2 className="text-xl font-black text-white mb-4 flex items-center gap-2 uppercase tracking-tighter italic">
-            Ferramentas & Suporte
-          </h2>
+          <h2 className="text-xl font-black text-white mb-4 flex items-center gap-2 uppercase tracking-tighter italic">Ferramentas & Suporte</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <a 
-              href={SOCIAL_LINKS.instagram} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 p-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all border border-white/5 group"
-            >
+            <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all border border-white/5 group">
               <ICONS.Instagram className="w-5 h-5 text-gray-400 group-hover:text-blue-400" />
               <div>
                 <div className="text-sm font-black uppercase tracking-tight">Meu Instagram! →</div>
                 <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Acompanhe as estratégias.</div>
               </div>
             </a>
-            <a 
-              href={SOCIAL_LINKS.support} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 p-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all border border-white/5 group"
-            >
+            <a href={SOCIAL_LINKS.support} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all border border-white/5 group">
               <ICONS.Phone className="w-5 h-5 text-gray-400 group-hover:text-green-500" />
               <div>
                 <div className="text-sm font-black uppercase tracking-tight">Suporte Direto →</div>
@@ -437,13 +434,10 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        {/* Modules Section */}
         <div className="mt-12">
           <h2 className="text-xl font-black text-white mb-6 uppercase tracking-widest flex items-center justify-between border-b border-white/5 pb-2">
             <span>CONTEÚDO DO TREINAMENTO</span>
-            <div className="flex items-center gap-4 text-gray-600">
-              <ICONS.Check className="w-4 h-4" />
-            </div>
+            <ICONS.Check className="w-4 h-4 text-gray-600" />
           </h2>
 
           <div className="grid gap-3">
@@ -462,7 +456,6 @@ const App: React.FC = () => {
                     <p className="text-xs text-gray-500 mt-0.5 font-medium">{module.description}</p>
                   </div>
                 </div>
-                
                 <div className="mt-4 flex items-center justify-between gap-4 text-[10px] font-black uppercase tracking-widest">
                   <div className="flex items-center gap-1.5">
                     <div className={`w-2 h-2 rounded-full ${module.lessons.length > 0 && module.lessons.every(l => readLessons.includes(l.id)) ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.5)]' : 'bg-gray-600'}`} />
@@ -475,156 +468,78 @@ const App: React.FC = () => {
             ))}
           </div>
         </div>
-
-        {/* Footer */}
-        <div className="mt-16 border-t border-white/5 pt-8 pb-12 text-center">
-          <p className="text-xs text-gray-600 font-bold uppercase tracking-[0.3em]">Dark Stage Platform © 2026</p>
-        </div>
       </div>
     </div>
   );
 
   const renderModuleView = (module: Module) => {
     const activeLessons = module.lessons.filter(l => !!l.content);
-
     return (
       <div className="max-w-4xl mx-auto px-4 py-8 animate-fadeIn" ref={containerRef}>
-        <button 
-          onClick={handleBackToModules}
-          className="flex items-center gap-2 text-gray-500 hover:text-white mb-8 transition-colors group"
-        >
+        <button onClick={handleBackToModules} className="flex items-center gap-2 text-gray-500 hover:text-white mb-8 transition-colors group">
           <ICONS.ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
           <span className="text-xs font-black uppercase tracking-widest">Voltar para Início</span>
         </button>
-
         <div className="flex flex-col md:flex-row md:items-center gap-6 mb-12 border-l-4 border-blue-600 pl-6 py-2">
           <div>
             <h1 className="text-3xl md:text-4xl font-black text-white tracking-tighter uppercase italic">{module.title}</h1>
             <p className="text-gray-500 font-black uppercase tracking-widest text-xs mt-1">{module.description}</p>
           </div>
         </div>
-
         <div className="grid gap-12">
-          {activeLessons.length > 0 ? (
-            activeLessons.map((lesson) => (
-              <div 
-                key={lesson.id}
-                className="flex flex-col p-6 md:p-10 bg-[#121212] rounded-2xl border border-white/5 shadow-2xl relative overflow-hidden"
-              >
-                <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-10 border-b border-white/5 pb-6">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                       {readLessons.includes(lesson.id) && (
-                         <span className="px-2 py-0.5 bg-green-500/10 text-green-500 text-[10px] font-black rounded uppercase tracking-widest border border-green-500/20">Concluído</span>
-                       )}
-                       <h3 className="text-2xl font-black text-white tracking-tight uppercase">{lesson.title}</h3>
-                    </div>
-                    <p className="text-xs text-gray-500 font-black uppercase tracking-widest italic">{lesson.description}</p>
+          {activeLessons.map((lesson) => (
+            <div key={lesson.id} className="flex flex-col p-6 md:p-10 bg-[#121212] rounded-2xl border border-white/5 shadow-2xl relative overflow-hidden">
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-10 border-b border-white/5 pb-6">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                     {readLessons.includes(lesson.id) && <span className="px-2 py-0.5 bg-green-500/10 text-green-500 text-[10px] font-black rounded uppercase tracking-widest border border-green-500/20">Concluído</span>}
+                     <h3 className="text-2xl font-black text-white tracking-tight uppercase">{lesson.title}</h3>
                   </div>
-
-                  <button 
-                    onClick={() => toggleRead(lesson.id)}
-                    className={`flex items-center gap-2 px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] transition-all active:scale-95 ${
-                      readLessons.includes(lesson.id) 
-                        ? 'bg-green-500/10 text-green-500 border border-green-500/30 shadow-[0_0_15px_rgba(34,197,94,0.1)]' 
-                        : 'bg-white/5 text-gray-500 border border-white/10 hover:bg-white/10 hover:text-white'
-                    }`}
-                  >
-                    <ICONS.Check className="w-4 h-4" />
-                    {readLessons.includes(lesson.id) ? 'Lido' : 'Marcar Lido'}
-                  </button>
+                  <p className="text-xs text-gray-500 font-black uppercase tracking-widest italic">{lesson.description}</p>
                 </div>
-
-                <div 
-                  className="prose prose-invert max-w-none text-gray-300 lesson-content"
-                  dangerouslySetInnerHTML={{ __html: lesson.content || '' }}
-                />
-
-                <div className="mt-12 pt-6 border-t border-white/5 flex justify-between items-center text-[10px] font-black text-gray-600 uppercase tracking-[0.2em]">
-                   <span>DARK STAGE™</span>
-                   <span>AULA {lesson.id.replace('l', '')}</span>
-                </div>
+                <button onClick={() => toggleRead(lesson.id)} className={`flex items-center gap-2 px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] transition-all active:scale-95 ${readLessons.includes(lesson.id) ? 'bg-green-500/10 text-green-500 border border-green-500/30' : 'bg-white/5 text-gray-500 border border-white/10 hover:bg-white/10 hover:text-white'}`}>
+                  <ICONS.Check className="w-4 h-4" />
+                  {readLessons.includes(lesson.id) ? 'Lido' : 'Marcar Lido'}
+                </button>
               </div>
-            ))
-          ) : (
-            <div className="p-20 text-center bg-[#111] rounded-3xl border border-dashed border-white/5">
-               <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <ICONS.Star className="w-8 h-8 text-gray-700" />
-               </div>
-               <p className="text-gray-500 font-black uppercase tracking-widest text-sm">O conteúdo deste módulo está sendo refinado.</p>
-               <p className="text-[10px] text-gray-700 uppercase tracking-[0.3em] mt-3">Atualização em breve pelo mentor</p>
+              <div className="prose prose-invert max-w-none text-gray-300 lesson-content" dangerouslySetInnerHTML={{ __html: lesson.content || '' }} />
             </div>
-          )}
+          ))}
         </div>
       </div>
     );
   };
 
-  if (!isLoggedIn) {
-    return renderLogin();
-  }
+  if (!isLoggedIn) return renderLogin();
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-blue-600/50">
       <nav className="sticky top-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-xl border-b border-white/5 px-6 py-4 flex items-center justify-between shadow-2xl">
         <div className="flex items-center gap-4 cursor-pointer group" onClick={handleBackToModules}>
-          <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-black font-black text-sm shadow-lg shadow-white/5 group-hover:rotate-6 transition-transform">DS</div>
+          <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-black font-black text-sm shadow-lg group-hover:rotate-6 transition-transform">DS</div>
           <div className="flex flex-col">
             <span className="font-black text-sm tracking-[0.2em] uppercase leading-none">Dark Stage™</span>
             <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1">Área de Membros</span>
           </div>
         </div>
-        
         <div className="flex items-center gap-3">
           {currentUser === 'admin@darkstage.com' && (
-            <button 
-              onClick={() => setIsAdminMode(!isAdminMode)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all ${isAdminMode ? 'bg-orange-600 text-white' : 'bg-white/5 text-gray-400 hover:text-white'}`}
-            >
+            <button onClick={() => setIsAdminMode(!isAdminMode)} className={`flex items-center gap-2 px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all ${isAdminMode ? 'bg-orange-600 text-white' : 'bg-white/5 text-gray-400'}`}>
               <ICONS.Settings className="w-4 h-4" />
               {isAdminMode ? 'Sair do Admin' : 'Admin'}
             </button>
           )}
-          <button 
-            onClick={handleLogout}
-            className="p-2 text-gray-500 hover:text-white transition-colors"
-            title="Sair"
-          >
-            Sair
-          </button>
+          <button onClick={handleLogout} className="p-2 text-gray-500 hover:text-white transition-colors">Sair</button>
         </div>
       </nav>
-
       <main className="pb-24 pt-4">
         {isAdminMode ? renderAdmin() : (selectedModule ? renderModuleView(selectedModule) : renderHome())}
       </main>
-
       <style>{`
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(10px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes slideLeft {
-          from { transform: translateX(100%); }
-          to { transform: translateX(0); }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        .animate-slideLeft {
-          animation: slideLeft 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        b, strong {
-          color: white;
-          font-weight: 900;
-        }
-        .lesson-content a {
-          transition: all 0.2s;
-        }
-        .lesson-content a:hover {
-          filter: brightness(1.2);
-          transform: translateY(-1px);
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideLeft { from { transform: translateX(100%); } to { transform: translateX(0); } }
+        .animate-fadeIn { animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .animate-slideLeft { animation: slideLeft 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
       `}</style>
     </div>
   );
