@@ -21,6 +21,13 @@ const INITIAL_WHITELIST: Student[] = [
     email: 'romabeh05@gmail.com', 
     password: 'darkaccess2026', 
     dateAdded: '04/01/2026' 
+  },
+  { 
+    id: 'student-2', 
+    name: 'Daniel Viana', 
+    email: 'danielvianadasilva2@gmail.com', 
+    password: 'Dvs1964@', 
+    dateAdded: '13/05/2024' 
   }
 ];
 
@@ -117,7 +124,7 @@ const App: React.FC = () => {
             <div className="w-28 h-28 bg-white rounded-[2rem] flex items-center justify-center mx-auto mb-8 shadow-2xl overflow-hidden">
               <img src="https://i.imgur.com/aQjlYHU.jpeg" className="w-24 h-24 object-contain" alt="Logo" />
             </div>
-            <h1 className="text-3xl font-bold uppercase italic tracking-tighter text-white">Dark Stage™</h1>
+            <h1 className="text-4xl font-black uppercase italic tracking-tighter text-white">Dark Stage™</h1>
             <p className="text-gray-500 text-[10px] font-semibold uppercase tracking-[0.2em] mt-2">Área de Membros</p>
           </div>
           <div className="bg-[#141414] p-8 rounded-[2rem] border border-white/5 shadow-xl">
@@ -140,7 +147,7 @@ const App: React.FC = () => {
   const renderAdmin = () => (
     <div className="max-w-6xl mx-auto px-4 py-12 animate-fadeIn">
       <div className="mb-12 text-center">
-        <h1 className="text-3xl font-bold uppercase italic text-white tracking-tighter">Gestão de Alunos</h1>
+        <h1 className="text-4xl font-black uppercase italic text-white tracking-tighter">Gestão de Alunos</h1>
         <p className="text-[10px] text-gray-500 uppercase mt-2 font-semibold tracking-widest">Status: <span className="text-white">Sistema Local Ativo</span></p>
       </div>
       
@@ -198,10 +205,10 @@ const App: React.FC = () => {
       </div>
 
       <div className="mb-10">
-        <h1 className="text-4xl font-bold text-white mb-2">Dark Stage™</h1>
+        <h1 className="text-4xl font-black italic uppercase text-white mb-2 tracking-tighter">Dark Stage™</h1>
         <div className="flex items-center gap-2 text-gray-400 text-sm mb-6">
           <span className="text-gray-500">|</span>
-          <p>Por <span className="underline decoration-gray-600">omentordigitalll</span></p>
+          <p>Por <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="underline decoration-gray-600 hover:text-white transition-colors">omentordigitalll</a></p>
         </div>
         <p className="text-gray-300 text-base leading-relaxed font-medium">
           Especialização em posicionamento de <strong>perfis Dark iniciantes</strong>, auxiliando na <u>estruturação</u> e no <u>impulsionamento</u> de vendas.
@@ -232,7 +239,7 @@ const App: React.FC = () => {
                   <ICONS.PaperAirplane className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors" />
                 </div>
                 <div>
-                  <h3 className="text-[12px] font-bold uppercase tracking-widest text-white">{m.title}</h3>
+                  <h3 className="text-[13px] font-black uppercase tracking-tight text-white italic">{m.title}</h3>
                   <p className="text-[9px] text-gray-600 uppercase font-semibold mt-1">{m.description}</p>
                 </div>
               </div>
@@ -249,12 +256,12 @@ const App: React.FC = () => {
       <button onClick={() => setSelectedModule(null)} className="text-gray-500 hover:text-white mb-10 text-[10px] font-bold uppercase flex items-center gap-2 transition-colors">
         <ICONS.ArrowLeft className="w-4 h-4" /> Voltar ao Painel
       </button>
-      <h1 className="text-4xl font-bold italic uppercase text-white mb-12 tracking-tighter">{m.title}</h1>
+      <h1 className="text-5xl font-black italic uppercase text-white mb-12 tracking-tighter leading-none">{m.title}</h1>
       <div className="space-y-16">
         {m.lessons.map(l => (
           <div key={l.id} className="relative bg-[#141414] p-8 md:p-10 rounded-[2rem] border border-white/5 shadow-2xl">
             <div className="flex items-center justify-between mb-10 border-b border-white/5 pb-6">
-              <h3 className="text-2xl font-bold uppercase text-white italic tracking-tighter">{l.title}</h3>
+              <h3 className="text-2xl font-black uppercase text-white italic tracking-tighter">{l.title}</h3>
               <button onClick={() => toggleRead(l.id)} className={`px-5 py-2.5 rounded-xl text-[9px] font-bold uppercase border transition-all ${readLessons.includes(l.id) ? 'bg-white text-black border-white' : 'bg-[#0f0f0f] text-gray-600 border-white/10'}`}>
                 {readLessons.includes(l.id) ? 'CONCLUÍDO ✓' : 'MARCAR VISTO'}
               </button>
@@ -273,7 +280,7 @@ const App: React.FC = () => {
           <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center overflow-hidden">
             <img src="https://i.imgur.com/aQjlYHU.jpeg" className="w-10 h-10 object-contain" alt="Logo" />
           </div>
-          <span className="font-bold text-[12px] uppercase italic tracking-[0.3em] hidden sm:block">Dark Stage™</span>
+          <span className="font-black text-[12px] uppercase italic tracking-[0.3em] hidden sm:block">Dark Stage™</span>
         </div>
         <div className="flex items-center gap-4 md:gap-8">
           {currentUser === 'admin@darkstage.com' && (
