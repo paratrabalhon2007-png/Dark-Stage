@@ -4,25 +4,25 @@ import { Module } from './types';
 export const MODULES: Module[] = [
   {
     id: 'intro',
-    title: 'INTRODUÇÃO',
+    title: 'INTRODUCAO',
     description: 'Comece Aqui',
     icon: 'PaperAirplane',
     lessons: [
       { 
         id: 'l1', 
         title: 'Boas vindas ao Dark Stage', 
-        description: 'Assista esse vídeo primeiro',
+        description: 'Assista esse video primeiro',
         content: `
           <div class="space-y-6">
             <p class="text-gray-300 leading-relaxed">
-              Agora está na hora de você criar sua conta! E eu recomendo que você crie uma do <strong>ZERO</strong> para começar do jeito certo. Abaixo você terá acesso a uma estrutura completa que eu utilizo em <strong>TODOS</strong> os meus perfis além de um passo a passo completo onde te ensino a aquecer da forma correta para evitar que seu conteúdo não seja entregue no início.
+              Agora esta na hora de voce criar sua conta! E eu recomendo que voce crie uma do <strong>ZERO</strong> para comecar do jeito certo. Abaixo voce tera acesso a uma estrutura completa que eu utilizo em <strong>TODOS</strong> os meus perfis alem de um passo a passo completo onde te ensino a aquecer da forma correta para evitar que seu conteudo nao seja entregue no inicio.
             </p>
             <div class="space-y-2">
                <a href="https://youtu.be/7B_1ATnnmww" target="_blank" rel="noopener noreferrer" class="block w-full">
                 <div class="my-4 p-6 bg-white/5 border border-white/10 rounded-xl text-center font-bold tracking-[0.2em] uppercase text-white shadow-inner hover:bg-white/10 hover:border-white/30 transition-all group">
                   <div class="flex items-center justify-center gap-3">
                     <svg class="w-6 h-6 text-white group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
-                    [ AULA INTRODUTÓRIA COMECE AQUI ]
+                    [ AULA INTRODUTORIA COMECE AQUI ]
                   </div>
                 </div>
               </a>
@@ -51,7 +51,7 @@ export const MODULES: Module[] = [
   {
     id: 'perfil-zero',
     title: 'CRIANDO UM PERFIL DO ZERO',
-    description: 'Aulas práticas de criação',
+    description: 'Aulas praticas de criacao',
     icon: 'PaperAirplane',
     lessons: [
       { 
@@ -70,9 +70,9 @@ export const MODULES: Module[] = [
     lessons: [
       { 
         id: 'l4', 
-        title: 'Estratégia de Nicho', 
-        description: 'Definição de mercado',
-        content: `<div class="space-y-4"><p class="text-gray-300">Escolha um nicho com demanda e mantenha a consistência.</p></div>`
+        title: 'Estrategia de Nicho', 
+        description: 'Definicao de mercado',
+        content: `<div class="space-y-4"><p class="text-gray-300">Escolha um nicho com demanda e mantenha a consistencia.</p></div>`
       }
     ]
   },
@@ -85,8 +85,8 @@ export const MODULES: Module[] = [
       { 
         id: 'l5', 
         title: 'Bio e Visual', 
-        description: 'Primeira impressão',
-        content: `<div class="space-y-4"><p class="text-gray-300">Sua bio é o seu cartão de visitas.</p></div>`
+        description: 'Primeira impressao',
+        content: `<div class="space-y-4"><p class="text-gray-300">Sua bio e o seu cartao de visitas.</p></div>`
       }
     ]
   },
@@ -100,40 +100,40 @@ export const MODULES: Module[] = [
         id: 'l6', 
         title: 'Cores e Fontes', 
         description: 'Reconhecimento de marca',
-        content: `<div class="space-y-4"><p class="text-gray-300">Crie um padrão visual para ser lembrado.</p></div>`
+        content: `<div class="space-y-4"><p class="text-gray-300">Crie um padrao visual para ser lembrado.</p></div>`
       }
     ]
   },
   {
     id: 'funil',
     title: 'FUNIL DE VENDAS',
-    description: 'Estratégia de faturamento',
+    description: 'Estrategia de faturamento',
     icon: 'PaperAirplane',
     lessons: [
       { 
         id: 'l7', 
         title: 'Minha Estrutura', 
         description: 'Como eu vendo todos os dias',
-        content: `<div class="space-y-4"><p class="text-gray-300">O funil é o caminho do seu cliente até a compra.</p></div>`
+        content: `<div class="space-y-4"><p class="text-gray-300">O funil e o caminho do seu cliente ate a compra.</p></div>`
       }
     ]
   },
   {
     id: 'captura',
-    title: 'CAPTURA DE CONTEÚDO',
-    description: 'Minerando vídeos virais',
+    title: 'CAPTURA DE CONTEUDO',
+    description: 'Minerando videos virais',
     icon: 'PaperAirplane',
     lessons: [
-      { id: 'l8', title: 'Mineração Prática', description: 'Onde encontrar vídeos', content: `<p class="text-gray-300">Aprenda a encontrar o que já está funcionando.</p>` }
+      { id: 'l8', title: 'Mineracao Pratica', description: 'Onde encontrar videos', content: `<p class="text-gray-300">Aprenda a encontrar o que ja esta funcionando.</p>` }
     ]
   },
   {
     id: 'edicao',
-    title: 'MINI AULA DE EDIÇÃO',
+    title: 'MINI AULA DE EDICAO',
     description: 'CapCut e Estilos',
     icon: 'PaperAirplane',
     lessons: [
-      { id: 'l9', title: 'Edição de Alto Impacto', description: 'Tutorial prático', content: `<p class="text-gray-300">Domine as ferramentas de edição para reter o público.</p>` }
+      { id: 'l9', title: 'Edicao de Alto Impacto', description: 'Tutorial pratico', content: `<p class="text-gray-300">Domine as ferramentas de edicao para reter o publico.</p>` }
     ]
   },
   {
@@ -142,16 +142,16 @@ export const MODULES: Module[] = [
     description: 'Infoproduto e Revenda',
     icon: 'PaperAirplane',
     lessons: [
-      { id: 'l10', title: 'Ideia e Execução', description: 'Criando sua oferta', content: `<p class="text-gray-300">Transforme conhecimento em produto digital.</p>` }
+      { id: 'l10', title: 'Ideia e Execucao', description: 'Criando sua oferta', content: `<p class="text-gray-300">Transforme conhecimento em produto digital.</p>` }
     ]
   },
   {
     id: 'metodo',
-    title: 'MÉTODO DARK',
-    description: 'Estratégia Completa',
+    title: 'METODO DARK',
+    description: 'Estrategia Completa',
     icon: 'PaperAirplane',
     lessons: [
-      { id: 'l11', title: 'Acesso ao Método', description: 'Passo a passo final', content: `<p class="text-gray-300">O guia definitivo para escalar seus perfis.</p>` }
+      { id: 'l11', title: 'Acesso ao Metodo', description: 'Passo a passo final', content: `<p class="text-gray-300">O guia definitivo para escalar seus perfis.</p>` }
     ]
   },
   {
@@ -166,19 +166,19 @@ export const MODULES: Module[] = [
   {
     id: 'templates',
     title: 'TEMPLATES GUIAS',
-    description: 'Modelos Editáveis',
+    description: 'Modelos Editaveis',
     icon: 'PaperAirplane',
     lessons: [
-      { id: 'l13', title: 'Edição de Templates', description: 'Personalizando seus materiais', content: `<p class="text-gray-300">Modelos prontos para você adaptar ao seu nicho.</p>` }
+      { id: 'l13', title: 'Edicao de Templates', description: 'Personalizando seus materiais', content: `<p class="text-gray-300">Modelos prontos para voce adaptar ao seu nicho.</p>` }
     ]
   },
   {
     id: 'consistencia',
-    title: 'CONSISTÊNCIA',
+    title: 'CONSISTENCIA',
     description: 'O segredo do algoritmo',
     icon: 'PaperAirplane',
     lessons: [
-      { id: 'l14', title: 'Disciplina Diária', description: 'Mantendo o ritmo', content: `<p class="text-gray-300">O algoritmo recompensa quem não para.</p>` }
+      { id: 'l14', title: 'Disciplina Diaria', description: 'Mantendo o ritmo', content: `<p class="text-gray-300">O algoritmo recompensa quem nao para.</p>` }
     ]
   },
   {
@@ -187,7 +187,7 @@ export const MODULES: Module[] = [
     description: 'Softwares e IAs',
     icon: 'PaperAirplane',
     lessons: [
-      { id: 'l15', title: 'Kit do Criador', description: 'O que eu uso', content: `<p class="text-gray-300">As ferramentas essenciais para sua operação.</p>` }
+      { id: 'l15', title: 'Kit do Criador', description: 'O que eu uso', content: `<p class="text-gray-300">As ferramentas essenciais para sua operacao.</p>` }
     ]
   }
 ];
