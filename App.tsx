@@ -92,6 +92,7 @@ const App: React.FC = () => {
     if (!newStudent.name || !newStudent.email || !newStudent.password) return alert("Preencha todos os campos.");
     
     try {
+      // Inserindo dados e capturando erro especifico do Supabase
       const { error } = await supabase.from('students').insert([{ 
         name: newStudent.name, 
         email: newStudent.email.toLowerCase().trim(), 
@@ -99,7 +100,10 @@ const App: React.FC = () => {
         dateAdded: new Date().toLocaleDateString('pt-BR')
       }]);
       
-      if (error) throw error;
+      if (error) {
+        console.error("Supabase insert error:", error);
+        throw error;
+      }
       
       setIsAddingStudent(false);
       setNewStudent({ name: '', email: '', password: '' });
@@ -107,7 +111,7 @@ const App: React.FC = () => {
       alert("Aluno adicionado com sucesso.");
     } catch (err: any) { 
       console.error(err);
-      alert("Erro ao salvar aluno no banco de dados."); 
+      alert("Erro ao salvar aluno no banco de dados. Verifique a conexao."); 
     }
   };
 
@@ -213,8 +217,13 @@ const App: React.FC = () => {
         <img src="https://i.imgur.com/1BEvTCp.png" className="w-full h-auto object-cover" alt="Banner" />
       </div>
 
-      {/* Social and Support Links under the Banner */}
-      <div className="grid grid-cols-2 gap-4 mb-6">
+      {/* "Criado por" section stays ABOVE the social links grid as requested */}
+      <div className="text-center mb-6 p-4 border-t border-b border-white/5">
+        <p className="text-[10px] text-gray-500 font-black uppercase tracking-[0.2em]">Criado por <span className="text-white">@omentordigitalll</span></p>
+      </div>
+
+      {/* Social and Support Links Grid */}
+      <div className="grid grid-cols-2 gap-4 mb-10">
         <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 p-4 bg-[#1a1a1a] rounded-2xl border border-white/5 hover:bg-[#222] transition-all">
           <ICONS.Instagram className="w-4 h-4 text-gray-400" />
           <span className="text-[10px] font-black uppercase tracking-widest text-white">Instagram</span>
@@ -223,10 +232,6 @@ const App: React.FC = () => {
           <ICONS.Phone className="w-4 h-4 text-gray-400" />
           <span className="text-[10px] font-black uppercase tracking-widest text-white">Suporte</span>
         </a>
-      </div>
-
-      <div className="text-center mb-10 p-4 border-t border-b border-white/5">
-        <p className="text-[10px] text-gray-500 font-black uppercase tracking-[0.2em]">Criado por <span className="text-white">@omentordigitalll</span></p>
       </div>
 
       <div className="space-y-3">
@@ -260,7 +265,7 @@ const App: React.FC = () => {
             <div className="flex items-center justify-between mb-8 border-b border-white/5 pb-4">
               <h3 className="text-2xl font-black uppercase text-white italic">{l.title}</h3>
               <button onClick={() => toggleRead(l.id)} className={`px-5 py-2.5 rounded-xl text-[8px] font-black uppercase border transition-all ${readLessons.includes(l.id) ? 'bg-white text-black' : 'bg-[#0f0f0f] text-gray-500 border-white/10'}`}>
-                {readLessons.includes(l.id) ? 'CONCLUIDO ✓' : 'MARCAR LIDO'}
+                {readLessons.includes(l.id) ? 'CONCLUIDO' : 'MARCAR LIDO'}
               </button>
             </div>
             <div className="prose prose-invert max-w-none text-gray-400 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: l.content || '' }} />
