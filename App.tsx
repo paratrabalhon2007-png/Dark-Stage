@@ -89,7 +89,6 @@ const App: React.FC = () => {
     localStorage.removeItem('dark_stage_session');
   };
 
-  // Add implementation for student management functions
   const addStudent = async () => {
     if (!supabase) return;
     if (!newStudent.name || !newStudent.email || !newStudent.password) return alert("Preencha todos os campos.");
@@ -125,7 +124,6 @@ const App: React.FC = () => {
 
   const toggleRead = (lessonId: string) => {
     setReadLessons(prev => {
-      // Fix: Use 'lessonId' instead of 'id' which was undefined in line 100
       const newState = prev.includes(lessonId) ? prev.filter(id => id !== lessonId) : [...prev, lessonId];
       localStorage.setItem('dark_stage_read_lessons', JSON.stringify(newState));
       return newState;
@@ -134,7 +132,6 @@ const App: React.FC = () => {
 
   const activeLesson = selectedModule?.lessons.find(l => l.id === selectedLessonId);
 
-  // Notion-like Layout Parts
   const renderSidebarItem = (label: string, icon: React.ReactNode, active: boolean, onClick: () => void, chevron?: boolean, expanded?: boolean) => (
     <div 
       onClick={onClick}
@@ -180,7 +177,6 @@ const App: React.FC = () => {
 
   return (
     <div className="flex h-screen bg-[#191919] text-[#fbfbfa] overflow-hidden font-sans">
-      {/* Sidebar */}
       <aside className={`${sidebarOpen ? 'w-64' : 'w-0'} bg-[#202020] flex flex-col transition-all duration-300 border-r border-white/5 relative`}>
         <div className="p-4 flex items-center gap-3 mb-2">
           <div className="w-6 h-6 bg-white rounded flex items-center justify-center overflow-hidden">
@@ -239,9 +235,7 @@ const App: React.FC = () => {
         </div>
       </aside>
 
-      {/* Main Content Area */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        {/* Topbar / Breadcrumbs */}
         <header className="h-11 flex items-center justify-between px-4 border-b border-white/5 bg-[#191919]">
           <div className="flex items-center gap-2 text-[14px]">
             <button onClick={() => setSidebarOpen(!sidebarOpen)} className="p-1 hover:bg-white/5 rounded text-gray-500">
@@ -274,7 +268,6 @@ const App: React.FC = () => {
           </div>
         </header>
 
-        {/* Scrollable Content */}
         <main className="flex-1 overflow-y-auto">
           <div className="max-w-[900px] mx-auto py-20 px-12 lg:px-24">
             {isAdminMode ? (
@@ -334,7 +327,6 @@ const App: React.FC = () => {
               <div className="animate-fadeIn">
                 <div className="mb-10 flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <span className="text-4xl">📄</span>
                     <h1 className="text-4xl font-bold tracking-tight">{activeLesson.title}</h1>
                   </div>
                   <button 
@@ -349,7 +341,6 @@ const App: React.FC = () => {
                      dangerouslySetInnerHTML={{ __html: activeLesson.content || '' }} 
                 />
                 
-                {/* Navigation Footer */}
                 <div className="mt-24 pt-10 border-t border-white/5 flex items-center justify-between">
                    <div className="text-xs text-gray-600 font-medium">Dark Stage • {selectedModule.title}</div>
                    <div className="flex gap-4">
@@ -361,7 +352,6 @@ const App: React.FC = () => {
             ) : (
               <div className="animate-fadeIn">
                 <div className="mb-12">
-                   <div className="text-6xl mb-6">🛸</div>
                    <h1 className="text-5xl font-bold tracking-tight mb-4">Dark Stage Platform</h1>
                    <p className="text-xl text-gray-500">Seu ambiente de trabalho para escalar operações Dark.</p>
                 </div>
@@ -398,7 +388,6 @@ const App: React.FC = () => {
         @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
         .animate-fadeIn { animation: fadeIn 0.5s ease-out forwards; }
         
-        /* Notion-style Typography */
         .notion-style-content { font-size: 16px; color: #d3d3d3; line-height: 1.6; }
         .notion-style-content p { margin-bottom: 1.25em; margin-top: 1.25em; }
         .notion-style-content h1, .notion-style-content h2, .notion-style-content h3 { color: #ffffff; font-weight: 700; margin-top: 2em; margin-bottom: 0.5em; letter-spacing: -0.02em; }
@@ -411,11 +400,9 @@ const App: React.FC = () => {
         .notion-style-content ul, .notion-style-content ol { margin-left: 1.5em; margin-bottom: 1.25em; }
         .notion-style-content li { margin-bottom: 0.5em; position: relative; }
         
-        /* Notion-like Block Elements */
         .notion-style-content blockquote { border-left: 3px solid #ffffff; padding-left: 1.25em; font-style: italic; color: #a0a0a0; margin: 2em 0; }
         .notion-style-content img { border-radius: 8px; margin: 2em auto; display: block; box-shadow: 0 20px 50px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.05); }
         
-        /* Custom buttons inside content */
         .notion-style-content button, .notion-style-content .block-button { 
           display: inline-block; padding: 12px 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); 
           border-radius: 8px; font-weight: 700; font-size: 14px; color: #fff; text-transform: uppercase; letter-spacing: 0.05em;
@@ -423,7 +410,6 @@ const App: React.FC = () => {
         }
         .notion-style-content button:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); transform: translateY(-1px); }
         
-        /* Layout overrides for sidebar toggle */
         @media (max-width: 768px) {
           .w-64 { width: 100%; position: absolute; z-index: 100; height: 100%; }
           .max-w-[900px] { padding-left: 24px; padding-right: 24px; }
