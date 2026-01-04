@@ -20,9 +20,9 @@ export const MODULES: Module[] = [
 
             <div class="space-y-2">
                <a href="https://youtu.be/7B_1ATnnmww" target="_blank" rel="noopener noreferrer" class="block w-full">
-                <div class="my-4 p-6 bg-white/5 border border-white/10 rounded-xl text-center font-bold tracking-[0.2em] uppercase text-white shadow-inner hover:bg-white/10 hover:border-[#ff5a00]/50 transition-all group">
+                <div class="my-4 p-6 bg-white/5 border border-white/10 rounded-xl text-center font-bold tracking-[0.2em] uppercase text-white shadow-inner hover:bg-white/10 hover:border-white/30 transition-all group">
                   <div class="flex items-center justify-center gap-3">
-                    <svg class="w-6 h-6 text-red-600 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    <svg class="w-6 h-6 text-white group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
                     [ AULA INTRODUTÓRIA COMECE AQUI ]
                   </div>
                 </div>
@@ -31,9 +31,9 @@ export const MODULES: Module[] = [
 
             <div class="space-y-2">
               <p class="font-bold text-white uppercase text-xs tracking-widest">Link:</p>
-              <a href="https://miro.com/app/board/uXjVLSWuwQM=/" target="_blank" rel="noopener noreferrer" class="group block p-4 bg-[#ff5a00]/5 border border-[#ff5a00]/20 rounded-xl text-[#ff5a00] hover:bg-[#ff5a00]/10 transition-all">
+              <a href="https://miro.com/app/board/uXjVLSWuwQM=/" target="_blank" rel="noopener noreferrer" class="group block p-4 bg-white/5 border border-white/20 rounded-xl text-white hover:bg-white/10 transition-all">
                 <span class="font-bold">[ CLICK AQUI PARA VIZUALIZAR NOSSA ESTRUTURA BASE ]</span>
-                <p class="text-xs text-[#ff5a00]/60 mt-1 opacity-100 transition-opacity italic">Clique para abrir o quadro no Miro</p>
+                <p class="text-xs text-gray-500 mt-1 opacity-100 transition-opacity italic">Clique para abrir o quadro no Miro</p>
               </a>
             </div>
 
@@ -41,7 +41,7 @@ export const MODULES: Module[] = [
               Click no "criando um perfil do zero" para assistir as aulas básicas onde vou ensinar o passo a passo de como criar e crescer um perfil na prática.
             </p>
 
-            <button data-navigate-module="perfil-zero" class="w-full my-8 p-6 bg-white/5 border border-white/10 rounded-xl text-center font-bold tracking-[0.2em] uppercase text-white hover:bg-white/10 hover:border-[#ff5a00]/50 transition-all active:scale-[0.98] shadow-lg">
+            <button data-navigate-module="perfil-zero" class="w-full my-8 p-6 bg-white/5 border border-white/10 rounded-xl text-center font-bold tracking-[0.2em] uppercase text-white hover:bg-white/10 hover:border-white/30 transition-all active:scale-[0.98] shadow-lg">
               [ Criando um perfil do zero ]
             </button>
 
@@ -53,7 +53,7 @@ export const MODULES: Module[] = [
               <p class="font-bold text-lg text-white mb-4 flex items-center gap-2">
                 Depois do seu perfil estruturado ele deve ficar mais ou menos dessa forma ↓
               </p>
-              <div class="max-w-[320px] mx-auto bg-[#111] rounded-2xl border border-white/10 overflow-hidden shadow-2xl group hover:border-[#ff5a00]/30 transition-all">
+              <div class="max-w-[320px] mx-auto bg-[#111] rounded-2xl border border-white/10 overflow-hidden shadow-2xl group hover:border-white/30 transition-all">
                 <img src="https://i.imgur.com/aWRzXH2.jpeg" alt="Perfil Estruturado" class="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
               </div>
             </div>
@@ -117,7 +117,7 @@ export const MODULES: Module[] = [
               </button>
             </div>
 
-            <div class="my-6 p-4 bg-[#ff5a00]/10 border-l-4 border-[#ff5a00] text-[#ff5a00] text-xs font-bold uppercase tracking-widest">
+            <div class="my-6 p-4 bg-white/5 border-l-4 border-white text-white text-xs font-bold uppercase tracking-widest">
               OBS: ASSISTA A AULA DE COMO CRIAR UMA HOSPEDAGEM DE LINKS PARA SEU PERFIL ↓
             </div>
 
@@ -149,10 +149,10 @@ export const MODULES: Module[] = [
             </div>
 
             <div class="space-y-3">
-              <a href="#" class="block p-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold hover:bg-white/10 transition-all text-sm uppercase tracking-wide">
+              <a href="https://youtube.com/shorts/4tK_58SJPio?si=l1ycHEXfUD5zclic" target="_blank" rel="noopener noreferrer" class="block p-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold hover:bg-white/10 transition-all text-sm uppercase tracking-wide">
                 [ POSTANDO O VÍDEO APÓS O AQUECIMENTO DE PERFIL ]
               </a>
-              <a href="#" class="block p-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold hover:bg-white/10 transition-all text-sm uppercase tracking-wide">
+              <a href="https://youtube.com/shorts/K49DO-plSXc?si=1Xn2atpTpPClSZoe" target="_blank" rel="noopener noreferrer" class="block p-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold hover:bg-white/10 transition-all text-sm uppercase tracking-wide">
                 [ RESULTADO FINAL VÍDEO DO MÓDULO CRIANDO UM PERFIL DO ZERO. ]
               </a>
             </div>
@@ -219,7 +219,7 @@ export const MODULES: Module[] = [
 
             <div class="p-4 bg-white/5 border border-white/10 rounded-xl">
               <span class="text-sm font-bold text-gray-400">Meu nicho é:</span>
-              <span className="text-sm font-black text-white ml-2">Negócios e Desenvolvimento Pessoal</span>
+              <span class="text-sm font-black text-white ml-2">Negócios e Desenvolvimento Pessoal</span>
             </div>
 
             <div class="pt-8">
@@ -252,9 +252,9 @@ export const MODULES: Module[] = [
             <section class="space-y-4">
               <h3 class="text-xl font-black text-white tracking-tight">1. Escolhendo um bom nome</h3>
               <p class="text-gray-400 text-sm leading-relaxed">
-                Escolher um bom nome de usuário é the primeiro passo para construir um bom perfil. Seu nome de usuário deve ser muito simples e direto. Evite usar símbolos e outras coisas que façam seu nome parecer bagunçado.
+                Escolher um bom nome de usuário é the primeiro passo para construir um bom perfil. Seu nome de usuário deve be muito simples e direto. Evite usar símbolos e outras coisas que façam seu nome parecer bagunçado.
               </p>
-              <p class="text-white font-bold text-sm bg-white/5 p-3 rounded-lg border-l-2 border-[#ff5a00]">
+              <p class="text-white font-bold text-sm bg-white/5 p-3 rounded-lg border-l-2 border-white">
                 Busque um nome que seja simples e fácil de ser lembrado/pronunciado.
               </p>
             </section>
@@ -271,11 +271,11 @@ export const MODULES: Module[] = [
 
               <div class="space-y-3">
                 <div class="p-4 bg-[#1a1a1a] rounded-xl border border-white/5">
-                  <p class="text-xs font-bold text-[#ff5a00] uppercase tracking-widest mb-1">Nome de Usuário:</p>
+                  <p class="text-xs font-bold text-white uppercase tracking-widest mb-1">Nome de Usuário:</p>
                   <p class="text-gray-300 text-sm">É the identificador único do perfil, usado com "@" (ex: @exemplo). Serve para buscas, marcações e não pode ser repetido.</p>
                 </div>
                 <div class="p-4 bg-[#1a1a1a] rounded-xl border border-white/5">
-                  <p class="text-xs font-bold text-[#ff5a00] uppercase tracking-widest mb-1">Nome da Conta:</p>
+                  <p class="text-xs font-bold text-white uppercase tracking-widest mb-1">Nome da Conta:</p>
                   <p class="text-gray-300 text-sm">É the nome visível no topo do perfil. Pode ser personalizado com texto, emojis e não precisa ser único.</p>
                 </div>
               </div>
@@ -286,7 +286,7 @@ export const MODULES: Module[] = [
               <p class="text-gray-300 text-sm leading-relaxed">
                 Inclua 1 a 3 palavras-chave relacionadas a nichos em seu perfil. Isso é muito útil para the <strong>SEO do Instagram</strong>, que é the mecanismo de busca. Isso faz com que quando os usuários pesquisarem determinadas palavras-chave do seu nicho, a sua possa ser uma das primeiras páginas a aparecer no feed de pesquisa.
               </p>
-              <p class="text-[#ff5a00] text-xs font-bold italic bg-[#ff5a00]/5 p-3 rounded-lg border border-[#ff5a00]/20">
+              <p class="text-white text-xs font-bold italic bg-white/5 p-3 rounded-lg border border-white/20">
                 Certifique-se de otimizar seu perfil com pelo menos 1 palavras-chave. Exemplo: Nome | palavra-chave | palavra-chave.
               </p>
             </section>
@@ -297,7 +297,7 @@ export const MODULES: Module[] = [
                 A foto do seu perfil dá the tom da sua página. Certifique-se de que expressa você e a ideia por trás da sua página.
               </p>
               <p class="text-gray-400 text-sm leading-relaxed">
-                A foto do seu perfil é uma parte importante da imagem da sua marca, mas falaremos sobre sua marca um pouco mais tarde. A foto do seu perfil deve ser clara e concisa. Certifique-se de exibir toda a ideologia da sua página.
+                A foto do seu perfil é uma parte importante da imagem da sua marca, mas falaremos sobre sua marca um pouco mais tarde. A foto do seu perfil deve be clara e concisa. Certifique-se de exibir toda a ideologia da sua página.
               </p>
               <p class="text-gray-400 text-sm leading-relaxed">
                 Se você for aparecer, busque uma foto sua com qualidade e que passe a imagem que você quer causar em seu conteúdo. Já imaginou um americano de negócios usando uma foto sem camisa?
@@ -320,9 +320,9 @@ export const MODULES: Module[] = [
               <div class="space-y-3">
                 <p class="text-xs font-bold text-gray-500 uppercase tracking-widest">Um dos padrões mais usados atualmente (e the que eu recomendo) é uma biografia com 3 linhas, sendo:</p>
                 <ul class="space-y-2 text-white font-bold text-sm ml-4">
-                  <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#ff5a00] rounded-full"></div> O QUE VOCÊ É</li>
-                  <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#ff5a00] rounded-full"></div> O QUE VOCÊ FAZ</li>
-                  <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#ff5a00] rounded-full"></div> INFORMAÇÃO ADICIONAL OU CTA</li>
+                  <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rounded-full"></div> O QUE VOCÊ É</li>
+                  <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rounded-full"></div> O QUE VOCÊ FAZ</li>
+                  <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rounded-full"></div> INFORMAÇÃO ADICIONAL OU CTA</li>
                 </ul>
               </div>
             </section>
@@ -333,7 +333,7 @@ export const MODULES: Module[] = [
                 Os links são obviamente muito importantes e fazem com que sua página pareça profissional.
               </p>
               <p class="text-gray-400 text-sm leading-relaxed">
-                No entanto, adicionar vários links ao seu perfil faz com que pareça que você está vendendo coisas e as pessoas não gostam disso.
+                No entanto, adicionar vários links au seu perfil faz com que pareça que você está vendendo coisas e as pessoas não gostam disso.
               </p>
               <div class="p-4 bg-white/5 border border-dashed border-white/10 rounded-xl">
                 <p class="text-white font-bold text-sm italic">"Mas e se eu precisar adicionar mais links?"</p>
@@ -355,7 +355,7 @@ export const MODULES: Module[] = [
               </div>
             </section>
 
-            <div class="mt-12 p-8 bg-[#ff5a00]/5 border border-[#ff5a00]/20 rounded-2xl">
+            <div class="mt-12 p-8 bg-white/5 border border-white/20 rounded-2xl">
               <h4 class="text-lg font-black text-white mb-4 uppercase tracking-tighter">Parabéns, Se você fez tudo corretamente, você já:</h4>
               <ul class="space-y-2 text-gray-300 text-sm">
                 <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg> Escolheu um nicho que você se identifique.</li>
@@ -388,7 +388,7 @@ export const MODULES: Module[] = [
             </p>
 
             <p class="text-gray-300 leading-relaxed italic border-l-2 border-white/20 pl-4">
-              Sua marca ajuda the espectador/leads a reconhecer sua página. Quando sua página está percorrendo por milhares de pessoas, ele deve ser capaz de dizer que the conteúdo é seu apenas pela marca.
+              Sua marca ajuda the espectador/leads a reconhecer sua página. Quando sua página está percorrendo por milhares de pessoas, ele deve be capaz de dizer que the conteúdo é seu apenas pela marca.
             </p>
 
             <section class="space-y-4">
@@ -434,7 +434,7 @@ export const MODULES: Module[] = [
               <p class="text-gray-400 text-sm leading-relaxed">
                 Observe que eu uso a cor preta com branco para destaques e foto de perfil. Esse uso consistente de cores faz com que meu perfil pareça elegante e se destaque.
               </p>
-              <p class="text-white font-black text-sm uppercase tracking-widest bg-[#ff5a00]/10 p-4 rounded-xl border border-[#ff5a00]/20">
+              <p class="text-white font-black text-sm uppercase tracking-widest bg-white/5 p-4 rounded-xl border border-white/10">
                 O perfil parece profissional para qualquer público, por isso clicam no botão seguir. Use a marca para parecer profissional.
               </p>
             </section>
@@ -461,14 +461,14 @@ export const MODULES: Module[] = [
                 Portanto, eu diria que se você tivesse que escolher uma fonte, use a mesma fonte em todos os reels para manter a consistência da marca. Não é uma virada de jogo, mas certamente ajuda.
               </p>
               <div class="p-6 bg-white/5 border border-white/10 rounded-2xl">
-                <p class="text-white font-bold text-sm mb-4">Eu uso a <span class="text-[#ff5a00]">Unbounded</span> e <span class="text-[#ff5a00]">Montserrat</span>.</p>
+                <p class="text-white font-bold text-sm mb-4">Eu uso a <span class="text-white">Unbounded</span> e <span class="text-white">Montserrat</span>.</p>
                 <div class="space-y-2">
                   <p class="text-xs font-black text-gray-500 uppercase tracking-widest">Algumas fontes que eu acho interessantes para se usar:</p>
                   <ul class="grid grid-cols-2 gap-2 text-white font-bold text-sm italic">
-                    <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#ff5a00] rounded-full"></div> Unbounded</li>
-                    <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#ff5a00] rounded-full"></div> Montserrat</li>
-                    <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#ff5a00] rounded-full"></div> Reveltica</li>
-                    <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#ff5a00] rounded-full"></div> Inter</li>
+                    <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rounded-full"></div> Unbounded</li>
+                    <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rounded-full"></div> Montserrat</li>
+                    <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rounded-full"></div> Reveltica</li>
+                    <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rounded-full"></div> Inter</li>
                   </ul>
                 </div>
               </div>
@@ -506,7 +506,7 @@ export const MODULES: Module[] = [
               </p>
               <div class="space-y-2">
                 <p class="text-xs font-bold text-gray-500 uppercase tracking-widest">LINK:</p>
-                <a href="https://miro.com/app/board/uXjVL91drmc=/" target="_blank" rel="noopener noreferrer" class="block p-4 bg-[#ff5a00]/5 border border-[#ff5a00]/20 rounded-xl text-[#ff5a00] font-bold hover:bg-[#ff5a00]/10 transition-all text-sm uppercase tracking-wide">
+                <a href="https://miro.com/app/board/uXjVL91drmc=/" target="_blank" rel="noopener noreferrer" class="block p-4 bg-white/5 border border-white/20 rounded-xl text-white font-bold hover:bg-white/10 transition-all text-sm uppercase tracking-wide text-center">
                   [ CLICK AQUI PARA ACESSAR O MATERIAL APRESENTADO NO VÍDEO ]
                 </a>
               </div>
@@ -544,7 +544,7 @@ export const MODULES: Module[] = [
         description: 'Minerando conteúdos virais',
         content: `
           <div class="space-y-8">
-            <div class="p-6 bg-[#ff5a00]/10 border-l-4 border-[#ff5a00] rounded-r-xl">
+            <div class="p-6 bg-white/5 border-l-4 border-white rounded-r-xl">
               <p class="text-white font-black uppercase tracking-widest text-sm mb-4">Atenção, futuros criadores: esta parte é CRUCIAL.</p>
               <p class="text-gray-300 text-sm leading-relaxed">
                 Preste atenção. Começar no Instagram parece um bicho de 7 cabeças não é? É porque você ainda tá no escuro. <strong>Este módulo é a luz.</strong> Vou te entregar the essencial pra crescer no Instagram com inteligência, desde técnicas de edição a estratégias de conteúdo que <strong>realmente funcionam</strong>.
@@ -566,7 +566,7 @@ export const MODULES: Module[] = [
                 <a href="https://youtu.be/fEM5fnn4O_Y" target="_blank" rel="noopener noreferrer" class="block p-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold hover:bg-white/10 transition-all text-sm uppercase tracking-wide">
                   [ CLICK AQUI PARA ACESSAR A AULA ]
                 </a>
-                <a href="https://www.notion.so/Lista-de-refer-ncias-1563f99da39280488350d1f24c55086e?source=copy_link" target="_blank" rel="noopener noreferrer" class="block p-4 bg-[#ff5a00]/5 border border-[#ff5a00]/20 rounded-xl text-[#ff5a00] font-bold hover:bg-[#ff5a00]/10 transition-all text-sm uppercase tracking-wide">
+                <a href="https://www.notion.so/Lista-de-refer-ncias-1563f99da39280488350d1f24c55086e?source=copy_link" target="_blank" rel="noopener noreferrer" class="block p-4 bg-white/5 border border-white/20 rounded-xl text-white font-bold hover:bg-white/10 transition-all text-sm uppercase tracking-wide text-center">
                   [ LINK DA FERRAMENTA USADA NA AULA, APENAS CLICK AQUI ]
                 </a>
               </div>
@@ -614,7 +614,7 @@ export const MODULES: Module[] = [
               <div class="space-y-6">
                 <div class="space-y-3">
                   <h4 class="text-lg font-black text-white uppercase flex items-center gap-2">
-                    <span class="text-[#ff5a00]">1.</span> GANCHO (HOOK)
+                    <span class="text-gray-500">1.</span> GANCHO (HOOK)
                   </h4>
                   <p class="text-gray-400 text-sm leading-relaxed">
                     O gancho é the elemento mais importante. Se você errar the início, seu Reels já nasce morto. <strong>Gancho Forte:</strong> Capture a atenção nos primeiros segundos.
@@ -626,7 +626,7 @@ export const MODULES: Module[] = [
 
                 <div class="space-y-3">
                   <h4 class="text-lg font-black text-white uppercase flex items-center gap-2">
-                    <span class="text-[#ff5a00]">2.</span> VALOR (A BASE)
+                    <span class="text-gray-500">2.</span> VALOR (A BASE)
                   </h4>
                   <p class="text-gray-400 text-sm leading-relaxed">
                     Mantenha os espectadores engajados com informações úteis ou entretenimento. Certifique-se de fornecer valor genuíno para criar reputação.
@@ -638,7 +638,7 @@ export const MODULES: Module[] = [
 
                 <div class="space-y-3">
                   <h4 class="text-lg font-black text-white uppercase flex items-center gap-2">
-                    <span class="text-[#ff5a00]">3.</span> CTA (CALL TO ACTION)
+                    <span class="text-gray-500">3.</span> CTA (CALL TO ACTION)
                   </h4>
                   <p class="text-gray-400 text-sm leading-relaxed">
                     O gatilho que move the espectador para a ação. Incentive a ler a legenda para aumentar the tempo de retenção enquanto the vídeo roda no fundo.
@@ -649,10 +649,10 @@ export const MODULES: Module[] = [
                 </div>
               </div>
 
-              <div class="p-8 bg-[#ff5a00]/5 border border-[#ff5a00]/20 rounded-2xl text-center space-y-4">
+              <div class="p-8 bg-white/5 border border-white/10 rounded-2xl text-center space-y-4">
                 <h4 class="text-xl font-black text-white uppercase">A Receita Viral: GANCHO + CTA + VALOR</h4>
                 <p class="text-gray-400 text-sm leading-relaxed">
-                  Esta é a estrutura exata que usei em todos os meus reels. Quanto ao comprimento, recomendo de <strong>5 a 8 segundos</strong> para maximizar the loop.
+                  Esta é a estrutura exata que usei em todos os meus reels. Quanto au comprimento, recomendo de <strong>5 a 8 segundos</strong> para maximizar the loop.
                 </p>
               </div>
             </section>
@@ -702,7 +702,7 @@ export const MODULES: Module[] = [
             <section class="space-y-4 pt-4">
               <div class="space-y-2">
                 <p class="text-xs font-bold text-gray-500 uppercase tracking-widest">LINK DA FERRAMENTA:</p>
-                <a href="https://outrageous-antler-30c.notion.site/CAPTURA-DE-CONTE-DO-13e3f99da39281299b36c3bb53030398?source=copy_link" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 bg-[#ff5a00]/5 border border-[#ff5a00]/20 rounded-xl text-[#ff5a00] font-bold hover:bg-[#ff5a00]/10 transition-all text-sm">
+                <a href="https://outrageous-antler-30c.notion.site/CAPTURA-DE-CONTE-DO-13e3f99da39281299b36c3bb53030398?source=copy_link" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 bg-white/5 border border-white/20 rounded-xl text-white font-bold hover:bg-white/10 transition-all text-sm">
                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
                    [ LINK DO MÓDULO DA FERRAMENTA COMENTADA NA AULA, APENAS CLICK AQUI ]
                 </a>
@@ -758,7 +758,7 @@ export const MODULES: Module[] = [
             <section class="space-y-4 pt-4">
               <div class="space-y-2">
                 <p class="text-xs font-bold text-gray-500 uppercase tracking-widest">MATERIAL DE APOIO:</p>
-                <a href="https://outrageous-antler-30c.notion.site/Meu-Guia-Gratuito-11d3f99da39280eb92aad12479d20aaa?source=copy_link" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 bg-[#ff5a00]/5 border border-[#ff5a00]/20 rounded-xl text-[#ff5a00] font-bold hover:bg-[#ff5a00]/10 transition-all text-sm">
+                <a href="https://outrageous-antler-30c.notion.site/Meu-Guia-Gratuito-11d3f99da39280eb92aad12479d20aaa?source=copy_link" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 bg-white/5 border border-white/20 rounded-xl text-white font-bold hover:bg-white/10 transition-all text-sm">
                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
                    [ LINK DO TEMPLATE DA AULA ACIMA CLICK AQUI ]
                 </a>
@@ -868,14 +868,14 @@ export const MODULES: Module[] = [
               <p class="text-gray-300 font-medium italic">E esse módulo resolve exatamente isso:</p>
 
               <p class="text-gray-400 text-sm leading-relaxed">
-                Aqui, eu vou te mostrar the <strong class="text-[#ff5a00]">Lead Magnet</strong> que uso dentro da <strong class="text-white">Kirvano</strong> e por que ele funciona como uma armadilha estratégica pra capturar atenção, gerar desejo e converter curiosos em compradores <strong class="text-white">mesmo em perfis pequenos.</strong>
+                Aqui, eu vou te mostrar the <strong class="text-white">Lead Magnet</strong> que uso dentro da <strong class="text-white">Kirvano</strong> e por que ele funciona como uma armadilha estratégica pra capturar atenção, gerar desejo e converter curiosos em compradores <strong class="text-white">mesmo em perfis pequenos.</strong>
               </p>
             </div>
 
             <section class="p-6 bg-[#111] border border-white/5 rounded-2xl space-y-4">
               <h4 class="text-white font-black uppercase tracking-tight italic">But afinal como criar um guia grátis mentor ?</h4>
               <p class="text-gray-400 text-sm leading-relaxed">
-                Vá em no módulo chamado <button data-navigate-module="metodo" class="text-white font-black uppercase underline hover:text-[#ff5a00] transition-colors">“MÉTODO”</button> acesse the livro e vá até a página do capítulo 5. Lá, eu ensino como de fato montar um guia gratuito.
+                Vá em no módulo chamado <button data-navigate-module="metodo" class="text-white font-black uppercase underline hover:opacity-70 transition-colors">“MÉTODO”</button> acesse the livro e vá até a página do capítulo 5. Lá, eu ensino como de fato montar um guia gratuito.
               </p>
             </section>
 
@@ -890,11 +890,11 @@ export const MODULES: Module[] = [
                   [ CLICK AQUI PARA ACESSAR A AULA ]
                 </a>
 
-                <div class="p-4 bg-[#ff5a00]/5 border border-[#ff5a00]/20 rounded-xl flex items-start gap-3">
-                  <div class="p-1 bg-[#ff5a00]/10 rounded">
-                    <svg class="w-4 h-4 text-[#ff5a00]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <div class="p-4 bg-white/5 border border-white/10 rounded-xl flex items-start gap-3">
+                  <div class="p-1 bg-white/10 rounded">
+                    <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                   </div>
-                  <p class="text-[10px] text-[#ff5a00]/80 font-bold uppercase tracking-widest leading-relaxed">
+                  <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest leading-relaxed">
                     OBS: Se clicar no nome Método vai ser direcionado para the modelo de forma automática.
                   </p>
                 </div>
@@ -930,12 +930,12 @@ export const MODULES: Module[] = [
             <section class="space-y-4 p-6 bg-[#111] border border-white/5 rounded-2xl">
               <h3 class="text-white font-black uppercase tracking-tight italic mb-4">Instruções de Uso:</h3>
               <ol class="space-y-3 text-gray-400 text-sm">
-                <li class="flex gap-3"><span class="text-[#ff5a00] font-bold">1.</span> Abra the link do template.</li>
-                <li class="flex gap-3"><span class="text-[#ff5a00] font-bold">2.</span> Acima no canto superior direito, clique em "duplicar" para criar uma versão para você.</li>
-                <li class="flex gap-3"><span class="text-[#ff5a00] font-bold">3.</span> Agora basta editar e adaptar au seu tipo de conteúdo/nicho.</li>
-                <li class="flex gap-3"><span class="text-[#ff5a00] font-bold">4.</span> Após finalizar the seu guia gratuito, clique acima em "COMPARTILHAR".</li>
-                <li class="flex gap-3"><span class="text-[#ff5a00] font-bold">5.</span> Depois selecione a opção "PUBLICAR" e "PUBLICAR SITE".</li>
-                <li class="flex gap-3"><span class="text-[#ff5a00] font-bold">6.</span> Dessa forma, você terá acesso au link do seu template no formato de site para entregar aos seus clientes.</li>
+                <li class="flex gap-3"><span class="text-white font-bold">1.</span> Abra the link do template.</li>
+                <li class="flex gap-3"><span class="text-white font-bold">2.</span> Acima no canto superior direito, clique em "duplicar" para criar uma versão para você.</li>
+                <li class="flex gap-3"><span class="text-white font-bold">3.</span> Agora basta editar e adaptar au seu tipo de conteúdo/nicho.</li>
+                <li class="flex gap-3"><span class="text-white font-bold">4.</span> Após finalizar the seu guia gratuito, clique acima em "COMPARTILHAR".</li>
+                <li class="flex gap-3"><span class="text-white font-bold">5.</span> Depois selecione a opção "PUBLICAR" e "PUBLICAR SITE".</li>
+                <li class="flex gap-3"><span class="text-white font-bold">6.</span> Dessa forma, você terá acesso au link do seu template no formato de site para entregar aos seus clientes.</li>
               </ol>
             </section>
 
@@ -958,14 +958,14 @@ export const MODULES: Module[] = [
             <section class="space-y-6 pt-10 border-t border-white/5">
               <div class="space-y-3">
                 <h4 class="text-xs font-black text-white uppercase tracking-widest">[ MINI AULA DE COMO EDITAR O TEMPLATE GUIA PARA CRIAR UM CURSO, GUIA GRATUITO OU OQ VOCE QUISER, CLICK AQUI ]</h4>
-                <a href="https://youtu.be/TV6PPvPb31I?si=dwa-k1_Mya-4Pf7j" target="_blank" rel="noopener noreferrer" class="block p-4 bg-[#ff5a00]/5 border border-[#ff5a00]/20 rounded-xl text-[#ff5a00] font-bold hover:bg-[#ff5a00]/10 transition-all text-sm uppercase tracking-wide text-center">
+                <a href="https://youtu.be/TV6PPvPb31I?si=dwa-k1_Mya-4Pf7j" target="_blank" rel="noopener noreferrer" class="block p-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold hover:bg-white/10 transition-all text-sm uppercase tracking-wide text-center">
                   ASSISTIR AULA DE EDIÇÃO DE TEMPLATE
                 </a>
               </div>
 
               <div class="space-y-3">
                 <h4 class="text-xs font-black text-white uppercase tracking-widest">[ MINI AULA DE COMO EDITAR E ADICIONAR MAIS REFERÊNCIAS NA LISTA DE MINERAÇÃO DE CONTEÚDO ]</h4>
-                <a href="https://youtu.be/xzea0oQiyk4?feature=shared" target="_blank" rel="noopener noreferrer" class="block p-4 bg-[#ff5a00]/5 border border-[#ff5a00]/20 rounded-xl text-[#ff5a00] font-bold hover:bg-[#ff5a00]/10 transition-all text-sm uppercase tracking-wide text-center">
+                <a href="https://youtu.be/xzea0oQiyk4?feature=shared" target="_blank" rel="noopener noreferrer" class="block p-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold hover:bg-white/10 transition-all text-sm uppercase tracking-wide text-center">
                   ASSISTIR AULA DE MINERAÇÃO
                 </a>
               </div>
@@ -1022,7 +1022,7 @@ export const MODULES: Module[] = [
                 Eu vi pelo menos 10 pessoas que inicialmente produziram um excelente conteúdo. Seus seguidores cresceram para 1k seguidores em poucos dias, para apenas passar por um período ruim de um mês sem novos seguidores.
               </p>
               
-              <div class="p-4 bg-[#ff5a00]/10 border border-[#ff5a00]/20 rounded-xl">
+              <div class="p-4 bg-white/5 border border-white/10 rounded-xl">
                  <p class="text-white font-bold text-sm">
                    "A maioria deles desistiu, mas uma pessoa persistiu e agora tem 49k seguidores, com crescimento contínuo e rápido. Isso exemplifica a beleza da consistência."
                  </p>
@@ -1056,32 +1056,32 @@ export const MODULES: Module[] = [
             </p>
 
             <div class="grid gap-4">
-              <div class="p-6 bg-[#111] border border-white/5 rounded-2xl hover:border-[#ff5a00]/30 transition-all">
+              <div class="p-6 bg-[#111] border border-white/5 rounded-2xl hover:border-white/30 transition-all">
                 <h4 class="text-white font-black uppercase tracking-tight mb-2">1. Canva</h4>
                 <p class="text-gray-400 text-sm leading-relaxed">Criar capas para reels, carrosséis atrativos e designs para meus produtos digitais.</p>
               </div>
 
-              <div class="p-6 bg-[#111] border border-white/5 rounded-2xl hover:border-[#ff5a00]/30 transition-all">
+              <div class="p-6 bg-[#111] border border-white/5 rounded-2xl hover:border-white/30 transition-all">
                 <h4 class="text-white font-black uppercase tracking-tight mb-2">2. Kirvano</h4>
                 <p class="text-gray-400 text-sm leading-relaxed">Plataforma que uso para hospedar meus produtos gratuitos e coletar emails.</p>
               </div>
 
-              <div class="p-6 bg-[#111] border border-white/5 rounded-2xl hover:border-[#ff5a00]/30 transition-all">
+              <div class="p-6 bg-[#111] border border-white/5 rounded-2xl hover:border-white/30 transition-all">
                 <h4 class="text-white font-black uppercase tracking-tight mb-2">3. CapCut</h4>
                 <p class="text-gray-400 text-sm leading-relaxed">Aplicativo que uso para editar meus vídeos e criar conteúdo.</p>
               </div>
 
-              <div class="p-6 bg-[#111] border border-white/5 rounded-2xl hover:border-[#ff5a00]/30 transition-all">
+              <div class="p-6 bg-[#111] border border-white/5 rounded-2xl hover:border-white/30 transition-all">
                 <h4 class="text-white font-black uppercase tracking-tight mb-2">4. ManyChat</h4>
                 <p class="text-gray-400 text-sm leading-relaxed">Um dos melhores bots para automatizar the seu perfil do Instagram e fazendo-the responder comentários, enviar mensagens prontas com the link do seu produto, etc.</p>
               </div>
 
-              <div class="p-6 bg-[#111] border border-white/5 rounded-2xl hover:border-[#ff5a00]/30 transition-all">
+              <div class="p-6 bg-[#111] border border-white/5 rounded-2xl hover:border-white/30 transition-all">
                 <h4 class="text-white font-black uppercase tracking-tight mb-2">5. ChatGPT</h4>
                 <p class="text-gray-400 text-sm leading-relaxed">IA pra ajudar você a escrever seu conteúdo, tirar ideias de ganchos, legendas, e muito mais! <strong class="text-white italic">(use muito)</strong></p>
               </div>
 
-              <div class="p-6 bg-[#111] border border-white/5 rounded-2xl hover:border-[#ff5a00]/30 transition-all">
+              <div class="p-6 bg-[#111] border border-white/5 rounded-2xl hover:border-white/30 transition-all">
                 <h4 class="text-white font-black uppercase tracking-tight mb-2">6. Notion</h4>
                 <p class="text-gray-400 text-sm leading-relaxed">Ferramenta que você está usando agora. É uma das melhores ferramentas de anotações para se organizar em diversas áreas da sua vida e estruturar the seu calendário de posts semanais.</p>
               </div>
