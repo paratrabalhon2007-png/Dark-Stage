@@ -66,6 +66,48 @@ export const MODULES: Module[] = [
     ]
   },
   {
+    id: 'levantando-caixa',
+    title: 'LEVANTANDO CAIXA RÁPIDO NO TRÁFEGO ORGÂNICO',
+    description: 'AULA 1',
+    icon: 'PaperAirplane',
+    lessons: [
+      {
+        id: 'lc-aula-1',
+        title: 'Aula 1: Estratégia de Venda Rápida',
+        description: 'Levantando caixa no orgânico',
+        content: `
+          <div class="space-y-10">
+            <p class="text-gray-300 text-base leading-relaxed">
+              Assista à aula abaixo onde eu te mostro a estratégia cirúrgica para levantar caixa rápido no tráfego orgânico. Essa é a base para quem quer começar a faturar sem investir em anúncios logo de cara.
+            </p>
+
+            <div class="space-y-6">
+               <a href="https://youtu.be/zPfaqFwTOAY?si=FfCaiehKkmAScfG7" target="_blank" rel="noopener noreferrer" class="block w-full">
+                <div class="p-6 md:p-8 bg-white/5 border border-white/10 rounded-[1.5rem] text-center font-bold tracking-[0.2em] uppercase text-white shadow-2xl hover:bg-white/10 hover:border-white/30 transition-all group active:scale-[0.98]">
+                  <div class="flex items-center justify-center gap-4">
+                    <svg class="w-6 h-6 text-white group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    [ ASSISTIR AULA 1 - CLICK AQUI ]
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="p-6 bg-white/5 border border-white/10 rounded-2xl border-l-4 border-l-white">
+              <p class="text-white font-bold text-[10px] uppercase tracking-widest mb-2 italic">DICA DE OURO:</p>
+              <p class="text-gray-400 text-xs italic leading-relaxed">
+                Aplique cada passo demonstrado no vídeo simultaneamente com a criação do seu conteúdo. O tráfego orgânico premia a consistência e a qualidade do gancho.
+              </p>
+            </div>
+
+            <div class="pt-6 border-t border-white/5 text-center">
+              <p class="text-gray-600 text-[9px] font-bold uppercase tracking-[0.2em]">Dark Stage™ - Operação Orgânica</p>
+            </div>
+          </div>
+        `
+      }
+    ]
+  },
+  {
     id: 'perfil-zero',
     title: 'Criando um perfil do zero',
     description: 'Criando um perfil com vocês',
@@ -170,7 +212,7 @@ export const MODULES: Module[] = [
 
             <div class="space-y-6">
               <p class="text-gray-300 text-base leading-relaxed">
-                Um ponto importante a ser observado é que alguns nichos podem ser combinados. Por exemplo, você pode combinar autoaperfeiçoamento e negócios, pois muitas pessoas em uma jornada de autoaperfeiçoamento podem estar interessadas em iniciar um negócio e aprender sobre ideias de negócios.
+                Um ponto importante a ser observado é que some nichos podem ser combinados. Por exemplo, você pode combinar autoaperfeiçoamento e negócios, pois muitas pessoas em uma jornada de autoaperfeiçoamento podem estar interessadas em iniciar um negócio e aprender sobre ideias de negócios.
               </p>
               <p class="text-white font-bold text-sm italic">Meu nicho é: Negócios e Desenvolvimento Pessoal</p>
             </div>
@@ -518,7 +560,7 @@ export const MODULES: Module[] = [
                 Vamos discutir o formato. Atualmente, o Instagram favorece vídeos curtos chamados 'reels', que acredito serem essenciais para o crescimento no Instagram. Enquanto alguns nichos usam carrosséis de fotos, considero os reels os mais eficazes para um crescimento mais rápido.
               </p>
               <p class="text-gray-300 text-base leading-relaxed italic border-l-2 border-white/20 pl-4">
-                Quanto às stories, não há necessidade de postar 10 stories por dia. En vez disso, mire em pelo menos uma story por dia e interaja com seus seguidores através de enquetes, perguntas ou brindes. Isso fornece dados valiosos para o algoritmo e aumenta a visibilidade dos seus reels.
+                Quanto às stories, não há necessidade de postar 10 stories por dia. Em vez disso, mire em pelo menos uma story por dia e interaja com seus seguidores através de enquetes, perguntas ou brindes. Isso fornece dados valiosos para o algoritmo e aumenta a visibilidade dos seus reels.
               </p>
               <p class="text-gray-300 text-base leading-relaxed">
                 Agora, considere seu conteúdo. Que tipo de posts você assiste até o fim e interage? Seja educacional, motivacional, engraçado, relacionável ou entretenimento, foque em criar conteúdo nessas categorias.
@@ -901,7 +943,7 @@ export const MODULES: Module[] = [
             <div class="space-y-6 border-t border-white/5 pt-8">
               <h2 class="text-2xl font-bold italic text-white tracking-tighter uppercase">Nicho e Identidade</h2>
               <p class="text-gray-300 text-sm leading-relaxed">
-                A consistência vai além do seu cronograma de postagens; ela se estende ao tipo de conteúdo que você compartilha. Como mencionado anteriormente, manter-se em um nicho é crucial. Postar conteúdo de dez nichos diferentes confunde o Instagram, dificultando a identificação do seu público-alvo.
+                A consistência vai além do seu cronograma de postagens; ela se extende ao tipo de conteúdo que você compartilha. Como mencionado anteriormente, manter-se em um nicho é crucial. Postar conteúdo de dez nichos diferentes confunde o Instagram, dificultando a identificação do seu público-alvo.
               </p>
             </div>
 
