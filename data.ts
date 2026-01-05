@@ -68,7 +68,7 @@ export const MODULES: Module[] = [
   {
     id: 'levantando-caixa',
     title: 'LEVANTANDO CAIXA RÁPIDO NO TRÁFEGO ORGÂNICO',
-    description: 'AULA 1',
+    description: 'FUNDAMENTOS DO CAIXA RÁPIDO',
     icon: 'PaperAirplane',
     lessons: [
       {
