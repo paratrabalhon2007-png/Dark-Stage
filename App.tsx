@@ -35,6 +35,13 @@ const INITIAL_WHITELIST: Student[] = [
     email: 'businessjovem40@gmail.com', 
     password: 'Jhon123@', 
     dateAdded: '13/05/2024' 
+  },
+  { 
+    id: 'student-4', 
+    name: 'Kaua Lucas', 
+    email: 'kaualucasrodrigues440@gmail.com', 
+    password: 'joaovictorgostoso999', 
+    dateAdded: '13/05/2024' 
   }
 ];
 
